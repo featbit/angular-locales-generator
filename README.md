@@ -34,8 +34,8 @@ In your package.json file,  add the following command:
   }
 }
 ```
-- **locales**: alias as l, the targeting locales, seperated by comma, **mandatory**
-- **base-path**: alias as bp, the directory where the translation files are stored,  **mandatory**
+- **locales**: alias as **l**, the targeting locales, seperated by comma, **mandatory**
+- **base-path**: alias as **bp**, the directory where the translation files are stored,  **mandatory**
 
 ## Run
 
@@ -48,3 +48,5 @@ or directly without adding **scripts** in your package.json file
 ```
 npx locales-generator --l zh,fr --bp ./src/locale
 ```
+
+Wait a while, locale files with name format **messages.[locale].xlf** should be generated under the base-path as specified above.
