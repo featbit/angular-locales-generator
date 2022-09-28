@@ -1,0 +1,26 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "outDir": "build",
+    "rootDir": "src",
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "lib": ["es6"],
+    "esModuleInterop": true,
+    "target": "es5",
+    "allowJs": false,
+    "sourceMap": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "noImplicitReturns": false,
+    "moduleResolution": "node"
+  },
+  "include": [
+      "src/**/*.json",
+      "**/*"
+  ],
+  "exclude": [
+      "build/**/*",
+      "tests/**/*"
+  ]
+}
