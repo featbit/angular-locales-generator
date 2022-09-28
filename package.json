@@ -3,17 +3,19 @@
   "bin": {
     "locales-generator": "./build/cli.js"
   },
-  "version": "1.0.23",
+  "version": "1.0.0",
   "description": "A handful util to generate and merge if exists already locale file for @angular/localize package",
   "main": "./build/cli.js",
   "scripts": {
     "build": "rimraf ./build && tsc",
+    "prepublishOnly": "npm run build",
     "locales-generator-cli": "npm run build && npx locale-generator --l zh --bp ./src/locale",
     "locales-generator": "npm run build && node build/cli.js --l zh --bp ./src/locale"
   },
   "keywords": [
     "featbit",
-    "locale generator"
+    "locale generator",
+    "angular"
   ],
   "author": "Featbit",
   "license": "ISC",
