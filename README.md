@@ -15,7 +15,7 @@ See https://github.com/all-?/all-contributors/issues/361#issuecomment-637166066
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/featbit/angular-locales-generator/build)](https://github.com/featbit/angular-locales-generator/actions/workflows/build.yml?branch=main)
 </div>
 
-This is a command line util for generating or merge, if exists already, locale file for angular project using @angular/localize package.
+This is a command line util for generating or merging, if exists already, locale files for angular project using @angular/localize package.
 **Only xlf format is supported.**
 # Getting Started
 ## Install
