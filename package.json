@@ -3,7 +3,7 @@
   "bin": {
     "locales-generator": "./build/cli.js"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A handful util to generate and merge if exists already locale file for @angular/localize package",
   "main": "./build/cli.js",
   "scripts": {
@@ -12,10 +12,19 @@
     "locales-generator-cli": "npm run build && npx locale-generator --l zh --bp ./src/locale",
     "locales-generator": "npm run build && node build/cli.js --l zh --bp ./src/locale"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/featbit/angular-locales-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/featbit/angular-locales-generator/issues"
+  },
+  "homepage": "https://github.com/featbit/angular-locales-generator#readme",
   "keywords": [
     "featbit",
     "locale generator",
-    "angular"
+    "angular",
+    "i18n"
   ],
   "author": "Featbit",
   "license": "ISC",
