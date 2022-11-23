@@ -9,8 +9,11 @@ export const generate = async (locales: string[], basePath: string, logger: any)
     attributeNamePrefix,
     format: true
   };
+
   const builder = new XMLBuilder(options);
-  const parser = new XMLParser(options);
+  // with stopNodes option, the source tag's value would not be parsed
+  // so value like <source>Hi, <x id="INTERPOLATION" equiv-text="{{ name }}"/>! LL</source> would be kept in the ouput
+  const parser = new XMLParser({...options, stopNodes: ["xliff.file.body.trans-unit.source"]});
 
   const sourceXlf = await fs.readFile(path.join(basePath, 'messages.xlf'), { encoding: 'utf8' });
   const sourceObjecct = parser.parse(sourceXlf);
@@ -41,7 +44,10 @@ export const generate = async (locales: string[], basePath: string, logger: any)
     const translatedObject = { ...sourceObjecct };
     translatedObject.xliff.file[`${attributeNamePrefix}source-language`] = locale;
     translatedObject.xliff.file.body['trans-unit'] = translatedUnits;
-    const translatedXlf = builder.build(translatedObject);
+    const translatedXlf = builder.build(translatedObject)
+        .replace(/&lt;/g, '<')
+        .replace(/&quot;/g, '"')
+        .replace(/&gt;/g, '>');
 
     await fs.writeFile(path.join(basePath, `messages.${locale}.xlf`), translatedXlf);
     logger.log({ level: 'info', message: `Done messages.${locale}.xlf`});
