@@ -13,7 +13,7 @@ export const generate = async (locales: string[], basePath: string, logger: any)
   const builder = new XMLBuilder(options);
   // with stopNodes option, the source tag's value would not be parsed
   // so value like <source>Hi, <x id="INTERPOLATION" equiv-text="{{ name }}"/>! LL</source> would be kept in the ouput
-  const parser = new XMLParser({...options, stopNodes: ["xliff.file.body.trans-unit.source"]});
+  const parser = new XMLParser({...options, stopNodes: ["xliff.file.body.trans-unit.source", "xliff.file.body.trans-unit.target"]});
 
   const sourceXlf = await fs.readFile(path.join(basePath, 'messages.xlf'), { encoding: 'utf8' });
   const sourceObjecct = parser.parse(sourceXlf);

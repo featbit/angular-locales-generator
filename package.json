@@ -3,7 +3,7 @@
   "bin": {
     "locales-generator": "./build/cli.js"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A handful util to generate and merge if exists already locale file for @angular/localize package",
   "main": "./build/cli.js",
   "scripts": {
