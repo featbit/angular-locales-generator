@@ -3,7 +3,7 @@
   "bin": {
     "locales-generator": "./build/cli.js"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A handful util to generate and merge if exists already locale file for @angular/localize package",
   "main": "./build/cli.js",
   "scripts": {
@@ -31,7 +31,7 @@
   "dependencies": {
     "winston": "^3.4.0",
     "yargs": "^17.3.1",
-    "fast-xml-parser": "^4.0.10"
+    "fast-xml-parser": "^4.0.12"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
